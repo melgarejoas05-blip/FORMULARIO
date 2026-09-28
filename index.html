@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" 
+    content="width=device-width, initial-scale=1.0">
+    <title>YamahaForm</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+    <header class="encabezado">
+    <img src="yamahalogo.jpg" alt="Logo Yamaha" class="logo">
+    <h1>YAMAHA MUSIC - FORMULARIO DE MÚSICOS E INSTRUMENTOS</h1>
+</header>
+
+   
+
+    <form action="proceso.php" method="post"
+    enctype="multipart/form-data">
+
+    <br>
+
+    <!--grupo1:datos personales-->
+
+    <fieldset>
+        <legend> DATOS DEL MÚSICO </legend>
+        <br> 
+
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" 
+        name="nombre" placeholder="Scott Weiland"
+        required> 
+        
+        <br>
+
+        <label for="mail">Mail</label>
+        <input type="email" id="mail" name="mail"
+        placeholder="correo@empresa.com">
+
+        <br> 
+
+        <label for="password">Contraseña de la cuenta</label>
+        <input type="password" id="password" 
+        name="password">
+
+        <br>
+
+        <label for="telefono">Telefono</label>
+        <input type="tel" id="telefono" 
+        name="telefono" placeholder="923 932 923">
+        <br> 
+
+        <label for="web">Sitio web, canal de YouTube o Spotify</label>
+        <input type="url" id="web" name="web"
+        placeholder="https://portafoliomusical.com">
+
+        <br> 
+
+         <label for="busqueda">Buscar instrumento o serie Yamaha</label>
+        <input type="search" id="busqueda" 
+        name="busqueda">
+
+        <br>
+
+    </fieldset>
+
+<br>
+
+    <fieldset>
+
+
+        <!--grupo2:NUMEROS Y RANGOS-->
+
+
+    <legend> EXPERIENCIA Y AÑOS TOCANDO </legend>
+    <br>
+
+    <label for="edad">Años de experiencia</label>
+    <input type="number" id="edad" name="edad"
+    min="1" max="20">
+    <br>
+
+    <label for="satisfacción">Nivel de dominio del instrumento (1: Principiante - 10: Profesional)</label>
+
+        <input type="range" id="satisfacción"
+        name="satisfacción" min="1"
+        max="10"> 
+        <br>
+
+    </fieldset>
+<br>
+
+    <fieldset>
+        <legend>PRUEBAS DE INSTRUMENTOS Y RESERVAS</legend>
+        <br>
+
+        <label for="fecha">Fecha de adquisición de tu primer Yamaha</label>
+        <input type="date" id="fecha" name="fecha">
+        <br>
+
+        <label for="hora">Hora preferida para prueba de instrumento en Showroom</label>
+        <input type="time" id="hora" name="hora">
+        <br>
+
+        <label for="fecha-hora">Reserva de espacio en la Sala de Ensayo / Showroom</label>
+        <input type="datetime-local" id="fecha-hora" name="fecha-hora">
+        <br>
+
+        <label for="mes">Mes de inicio de clases en la Academia Yamaha</label>
+        <input type="month" id="mes" name="mes">
+        <br> 
+
+        <label for="semana">Semana de calibración / mantenimiento de tu instrumento</label>
+        <input type="week" id="semana" name="semana">
+        <br> 
+    </fieldset>
+    
+<br>
+
+    <!--grupo4: SELECCION Y OPCIONES-->
+<fieldset>
+        <legend>INSTRUMENTOS Y CATEGORÍAS YAMAHA</legend>
+        <p>Perfil de intérprete</p>
+        <div class="radio-group">
+                    <input type="radio" id="solista" name="perfil" value="solista">
+                    <label for="solista">Músico Solista / Estudiante</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="banda" name="perfil" value="banda_orquesta">
+                    <label for="banda">Integrante de Banda / Orquesta / Productor</label>
+                </div>
+    
+</br>
+<p>Instrumentos y equipos Yamaha que ejecutas o te interesan</p> 
+                <div class="checkbox-group">
+                    <input type="checkbox" id="guitarras" name="instrumentos[]" value="guitarras_bajos">
+                    <label for="guitarras">Guitarras y Bajos (Pacifica, Revstar, TRBX, TransAcoustic)</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="teclados" name="instrumentos[]" value="teclados_pianos">
+                    <label for="teclados">Pianos y Sintetizadores (Clavinova, MONTAGE, PSR, CP)</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="baterias" name="instrumentos[]" value="baterias">
+                    <label for="baterias">Baterías Acústicas y Electrónicas (Stage Custom, DTX)</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="viento" name="instrumentos[]" value="viento_madera_metal">
+                    <label for="viento">Viento Madera y Metal (Saxofones, Trompetas, Flautas)</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="cuerdas" name="instrumentos[]" value="cuerdas_frotadas">
+                    <label for="cuerdas">Violines y Cuerdas Silent (SILENT Violin, SILENT Cello)</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="audio_estudio" name="instrumentos[]" value="audio_profesional">
+                    <label for="audio_estudio">Audio Profesional y Estudio (Monitores HS, Mezcladoras MG)</label>
+                </div>
+
+                <br>
+
+<label for="pais">Sede / Distribuidor Yamaha de tu región</label>
+                <select id="pais" name="pais">
+                    <option value="peru">Perú</option>
+                    <option value="mexico">México</option>
+                    <option value="colombia">Colombia</option>
+                    <option value="argentina">Argentina</option>
+                    <option value="chile">Chile</option>
+                    <option value="espana">España</option>
+                    <option value="otros">Otro país</option>
+                </select>
+
+                <label for="instrumento-favorito">
+                    <br>
+                Tu modelo o línea preferida de Yamaha</label>
+                <input type="text" list="lista-instrumentos" id="instrumento-favorito" name="instrumento-favorito" placeholder="Empieza a escribir...">
+
+                <datalist id="lista-instrumentos">
+                    <option value="Guitarra Eléctrica Yamaha Pacifica">
+                    <option value="Piano Digital Yamaha Clavinova">
+                    <option value="Batería Electrónica Yamaha DTX">
+                    <option value="Sintetizador Yamaha MONTAGE">
+                    <option value="Saxofón Alto Yamaha YAS-280">
+                    <option value="Guitarra Acústica TransAcoustic">
+                    <option value="Monitores de Estudio Yamaha HS Series">
+                </datalist>
+            </fieldset>
+<br>
+
+<!--grupo5: ARCHIVO Y MULTIMEDIA-->
+<fieldset>
+    <legend>ARCHIVOS Y PERSONALIZACIÓN DE INSTRUMENTOS</legend>
+    <label for="archivo">Subir demostración en audio/video tocando tu instrumento (MP3, WAV, MP4, PDF)</label>
+    <br>
+    <input type="file" id="archivo" name="archivo">
+    <br>
+    <br>
+
+
+</fieldset>
+<br>
+<br>
+    
+<!--grupo6: TEXTOS EXTENSOS Y OCULTOS-->
+<fieldset>
+<legend>HISTORIA Y COMENTARIOS</legend>
+
+<label for="biografia">Cuéntanos sobre tu trayectoria musical o lo que buscas de Yamaha</label> <br>
+<textarea id="biografia" name="biografia" 
+rows="4" cols="60" placeholder="Escribe aquí qué instrumentos ejecutas, tus proyectos o consultas...
+"></textarea>
+<br> 
+</fieldset>
+
+<br>
+
+<!--BOTONES-->
+
+<input type="reset" value="Limpiar formulario">
+<input type="submit" value="Enviar a Yamaha Music">
+
+
+</form> 
+
+
+
+
+</body>
+</html>
